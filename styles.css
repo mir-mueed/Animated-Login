@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #23242a;
+}
+
+.box
+{
+    position: relative;
+    width: 380px;
+    height: 420px;
+    background: #1c1c1c;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.box::before
+{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+
+.box::after
+{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+@keyframes animate
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+
+.form
+{
+    position: absolute;
+    inset: 2px;
+    border-radius: 8px;
+    background: #28292d;
+    z-index: 10;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form h2
+{
+    color: #45f3ff;
+    font-size: 32px;
+}
+
+.form h5
+{
+    color: #45f3ff;
+    letter-spacing: 2px;
+}
+
+.inputBox {
+    position: relative;
+    margin-top: 30px;
+}
+
+.inputBox input {
+    width: 100%;
+    height: 32px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 0px 30px 0px 10px;
+    background: #28292d;
+    color: white;
+    letter-spacing: 2px;
+    border-bottom: 0.15rem solid #45f3ff;
+}
+
+.inputBox i {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8f8f8f;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.inputBox input:focus
+{
+    background: rgb(32, 32, 32);
+    border-bottom: 0.15rem solid blue;
+}
+
+.links
+{
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: 1px;
+    padding: 5px 8px;
+}
+
+.links a
+{
+    margin: 15px 0;
+    font-size: 12px;
+    color: #8f8f8f;
+    text-decoration: none;
+}
+
+.links a:hover, .links a:nth-child(2)
+{
+    color: #45f3ff;
+}
+
+input[type="submit"]
+{
+    border: none;
+    outline: none;
+    background: #45f3ff;
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+input[type="submit"]:active
+{
+    opacity: 0.5;
+}
